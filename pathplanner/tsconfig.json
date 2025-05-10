@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
+    "types": ["paper", "uuid"],
+    "skipLibCheck": true,
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+     "paths": {
+      "@lib/*": ["src/lib/*"]
+    },
+    "baseUrl": ".",
+    
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -23,4 +30,5 @@
   "include": [
     "src"
   ]
+  
 }
