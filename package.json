@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@types/paper": "^0.11.14"
+  }
+}
