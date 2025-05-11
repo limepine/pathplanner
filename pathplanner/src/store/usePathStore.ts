@@ -16,6 +16,7 @@ const defaultConfig: RobotConfig = {
   trackWidth: 0.5,
   maxVelocity: 3.0,
   maxAcceleration: 1.0,
+  maxDeceleration: 1.0,
   wheelDiameter: 0.1,
 };
 

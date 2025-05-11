@@ -1,21 +1,19 @@
 import 'paper';
 
 declare module 'paper' {
-  interface PaperEvent extends MouseEvent {
-    point: Point;
-    downPoint: Point;
-    middlePoint: Point;
+  interface ItemEvent {
+    point: paper.Point;
+    downPoint: paper.Point;
+    middlePoint: paper.Point;
     count: number;
-    item: Item | null;
+    item: paper.Item | null;
     type: string;
   }
 
+  // Extend the PathItem interface
   interface PathItem {
-    onMouseDown: (event: PaperEvent) => boolean | void;
-    onMouseDrag: (event: PaperEvent) => boolean | void;
-  }
-
-  interface Tool {
-    onMouseDown: (event: PaperEvent) => boolean | void;
+    onMouseDown: (event: ItemEvent) => boolean | void;
+    onMouseDrag: (event: ItemEvent) => boolean | void;
+    onMouseUp: (event: ItemEvent) => boolean | void;
   }
 }

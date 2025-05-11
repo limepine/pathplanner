@@ -13,7 +13,8 @@ export interface Waypoint extends Point {
 export interface RobotConfig {
   trackWidth: number; // meters
   maxVelocity: number; // m/s
-  maxAcceleration: number; // m/s²
+  maxAcceleration: number;
+  maxDeceleration: number; // m/s²
   wheelDiameter: number; // meters
 }
 
@@ -28,4 +29,22 @@ declare global {
       item: Item;
     }
   }
+}
+export interface Point {
+  x: number;
+  y: number;
+}
+
+export interface TrajectoryPoint extends Point {
+  velocity: number;
+  time: number;
+  heading?: number;
+  angularVelocity?: number;
+  isWaypoint?: boolean;
+}
+
+export interface MotionConstraints {
+  maxVelocity: number;
+  maxAcceleration: number;
+  maxDeceleration: number;
 }
